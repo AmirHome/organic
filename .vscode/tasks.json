@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Wget src URLs",
+            "type": "shell",
+            "command": "egrep -o 'src=\"assets[^\"]+\"' ${file} | sed 's/src=\\\"//g' | sed 's/\\\"//g' | awk -F/ '{path=$0; name=$NF; sub(\"/\" name \"$\", \"\", path); print \"wget -P \" path \" https://pixydrops.com/ogenix/main-html/\" path \"/\" $NF}' > download-src-urls.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Wget href URLs",
+            "type": "shell",
+            "command": "egrep -o 'href=\"assets[^\"]+\"' ${file} | sed 's/href=\\\"//g' | sed 's/\\\"//g' | awk -F/ '{path=$0; name=$NF; sub(\"/\" name \"$\", \"\", path); print \"wget -P \" path \" https://pixydrops.com/ogenix/main-html/\" path \"/\" $NF}' > download-href-urls.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Wget url( URLs",
+            "type": "shell",
+            "command": "egrep -o 'url\\(assets[^\"]+\"' ${file} | sed 's/url(//g' | sed 's/)[;]*\\\"//g' | awk -F/ '{path=$0; name=$NF; sub(\"/\" name \"$\", \"\", path); print \"wget -P \" path \" https://pixydrops.com/ogenix/main-html/\" path \"/\" $NF}' > download-url-urls.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+                   
+    ]
+}
