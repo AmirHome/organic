@@ -71,9 +71,7 @@ body.boxed-wrapper .page-wrapper,
     opacity: .60;
 }
 
-.main-slider__img-one {
-    right: 335px;
-}
+
 
 .feature-one__inner {
     background-color: var(--ogenix-black);

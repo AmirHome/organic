@@ -2377,8 +2377,8 @@ ul {
 .main-slider__img-one {
   position: absolute;
   top: 105px;
-  right: 260px;
-  transform: translateX(400px);
+  /*right: 260px;
+  /*transform: translateX(400px);*/
   z-index: 1;
 }
 
@@ -2389,7 +2389,7 @@ ul {
 }
 
 .main-slider__img-one img {
-  width: auto;
+  width: 100%;
 }
 
 .main-slider__content {
